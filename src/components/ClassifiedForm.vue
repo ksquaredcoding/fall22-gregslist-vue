@@ -41,7 +41,64 @@
     </div>
 
     <div v-else-if="editable.listingType == 'Job'">
-      <h1>TODO</h1>
+      <div class="form-group">
+        <label for="company">Company:</label>
+        <input type="text" v-model="editable.listing.company" placeholder="Company" required class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="jobTitle">Job Title:</label>
+        <input type="text" v-model="editable.listing.jobTitle" placeholder="Job Title" required class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="rate">Rate:</label>
+        <input type="number" v-model="editable.listing.rate" placeholder="Rate" required class="form-control" min="0">
+      </div>
+      <div class="form-group">
+        <label for="hours">Hours:</label>
+        <input type="number" v-model="editable.listing.hours" placeholder="Hours" required class="form-control" min="0"
+          max="168">
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea v-model="editable.listing.description" placeholder="description" class="form-control"
+          rows="4"></textarea>
+      </div>
+    </div>
+
+    <div v-else-if="editable.listingType == 'House'">
+      <div class="form-group">
+        <label for="bedrooms">Bedrooms:</label>
+        <input type="number" v-model="editable.listing.bedrooms" placeholder="Bedrooms" required class="form-control"
+          min="0">
+      </div>
+      <div class="form-group">
+        <label for="bathrooms">Bathrooms:</label>
+        <input type="number" v-model="editable.listing.bathrooms" placeholder="Bathrooms" required class="form-control"
+          min="0">
+      </div>
+      <div class="form-group">
+        <label for="levels">Levels:</label>
+        <input type="number" v-model="editable.listing.levels" placeholder="Levels" required class="form-control"
+          min="0">
+      </div>
+      <div class="form-group">
+        <label for="model">ImgUrl:</label>
+        <input type="url" v-model="editable.listing.imgUrl" placeholder="https://youknow.com" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="price">price:</label>
+        <input type="number" v-model="editable.listing.price" placeholder="Price" required class="form-control" min="0">
+      </div>
+      <div class="form-group">
+        <label for="year">Year:</label>
+        <input type="number" v-model="editable.listing.year" placeholder="Year" required class="form-control" min="0"
+          :max="new Date().getFullYear() + 1">
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea v-model="editable.listing.description" placeholder="description" class="form-control"
+          rows="4"></textarea>
+      </div>
     </div>
 
 
